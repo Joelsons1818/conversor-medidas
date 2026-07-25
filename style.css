@@ -1,10 +1,10 @@
 :root { font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", sans-serif; color: #17201d; background: #f7f8f6; }
-* { box-sizing: border-box; -webkit-tap-highlight-color: transparent; }
-body { margin: 0; min-height: 100svh; background: #f7f8f6; }
+* { box-sizing: border-box; -webkit-tap-highlight-color: transparent; touch-action: manipulation; }
+body { margin: 0; height: 100svh; overflow: hidden; background: #f7f8f6; }
 button, input { font: inherit; }
 button { cursor: pointer; border: 0; }
-.app { min-height: 100svh; max-width: 700px; margin: auto; padding: max(26px, env(safe-area-inset-top)) 18px max(16px, env(safe-area-inset-bottom)); display: flex; flex-direction: column; }
-header { padding: 3px 8px 20px; } .eyebrow { color: #4e7668; font-size: 11px; font-weight: 800; letter-spacing: 1.1px; } h1 { font-size: 36px; line-height: 1; margin: 5px 0 7px; letter-spacing: -.9px; } header p { margin: 0; color: #68736d; font-size: 15px; }
+.app { height: 100svh; max-width: 700px; margin: auto; padding: max(20px, env(safe-area-inset-top)) 18px max(12px, env(safe-area-inset-bottom)); display: flex; flex-direction: column; overflow: hidden; }
+header { padding: 2px 8px 14px; } h1 { font-size: 34px; line-height: 1; margin: 0; letter-spacing: -.9px; }
 .converter { flex: 1; display: flex; flex-direction: column; gap: 16px; } .readouts { display: grid; grid-template-columns: minmax(0, 1fr) 72px; grid-template-rows: repeat(2, 1fr); gap: 9px; }
 .readout { min-height: 86px; border: 2px solid transparent; border-radius: 20px; background: #fff; padding: 12px 19px; box-shadow: 0 5px 20px rgba(21,43,34,.06); display: flex; flex-direction: column; justify-content: center; transition: .18s; }
 .readout.active { border-color: #356d5c; background: #f2faf6; } .readout span { color: #5e6b64; font-size: 13px; font-weight: 700; } .readout input { color: #17201d; font-size: 31px; line-height: 1.15; font-weight: 700; letter-spacing: -.6px; padding: 0; border: 0; outline: 0; background: transparent; width: 100%; }
@@ -13,5 +13,14 @@ header { padding: 3px 8px 20px; } .eyebrow { color: #4e7668; font-size: 11px; fo
 .categories, .units, .keypad { background: #edf0ec; border-radius: 21px; padding: 9px; } .categories { display: flex; flex-direction: column; gap: 7px; } .category { min-height: 57px; padding: 8px; border-radius: 15px; background: transparent; color: #59645e; text-align: left; font-size: 14px; font-weight: 700; } .category.active { background: #17201d; color: #fff; box-shadow: 0 4px 12px rgba(23,32,29,.17); }
 .keypad { display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px; background: #e4e9e3; } .keypad button { border-radius: 15px; color: #17201d; background: #fff; font-size: 24px; font-weight: 650; box-shadow: 0 2px 2px rgba(27,46,37,.05); } .keypad button:active, .unit:active, .category:active, .clear:active { transform: scale(.96); } .keypad .erase { background: #dbe8e0; color: #356d5c; }
 .units { overflow: auto; } #unit-list { display: grid; gap: 10px; } .unit-group { display: grid; gap: 6px; } .unit-group h2 { margin: 4px 4px 1px; color: #68736d; font-size: 10px; line-height: 1.2; font-weight: 800; letter-spacing: .4px; text-transform: uppercase; } .unit { min-height: 45px; padding: 6px 9px; background: #fff; border-radius: 13px; color: #4c5b53; text-align: left; font-size: 13px; font-weight: 700; } .unit.selected { background: #cfe6dc; color: #174d3d; outline: 2px solid #356d5c; }
-footer { padding: 15px 8px 2px; color: #6c7670; font-size: 12px; text-align: center; } .dot { display: inline-block; width: 7px; height: 7px; border-radius: 99px; background: #5aa681; margin-right: 4px; }
 @media (max-width: 390px) { .app { padding-left: 12px; padding-right: 12px; } .workspace { gap: 7px; } .categories,.units,.keypad { padding: 7px; border-radius: 18px; } .category { min-height: 52px; font-size: 12px; } .unit { min-height: 42px; font-size: 12px; } }
+@media (max-width: 600px) {
+  .workspace { grid-template-columns: 1.18fr .82fr; grid-template-rows: auto 1fr; gap: 9px; min-height: 0; }
+  .categories, .units, .keypad { padding: 7px; border-radius: 18px; }
+  .categories { grid-column: 1 / span 2; grid-row: 1; display: grid; grid-template-columns: repeat(4, 1fr); gap: 6px; }
+  .category { min-height: 52px; padding: 6px 3px; text-align: center; font-size: 11px; }
+  .keypad { grid-column: 1; grid-row: 2; }
+  .units { grid-column: 2; grid-row: 2; }
+  .unit { min-height: 40px; padding: 6px 7px; font-size: 11px; line-height: 1.15; }
+  .unit-group h2 { font-size: 9px; }
+}

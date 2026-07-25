@@ -2,7 +2,7 @@
 <html lang="pt-BR">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, viewport-fit=cover" />
   <meta name="theme-color" content="#f7f8f6" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
   <meta name="apple-mobile-web-app-status-bar-style" content="default" />
@@ -13,12 +13,12 @@
 </head>
 <body>
   <main class="app" aria-label="Conversor de medidas">
-    <header><span class="eyebrow">CONVERSOR RÁPIDO</span><h1>Medidas</h1><p>Toque numa medida, digite e pronto.</p></header>
+    <header><h1>Medidas</h1></header>
     <section class="converter">
       <div class="readouts">
         <label class="readout active" data-field="top"><span id="top-unit">Metros</span><input id="top-value" inputmode="decimal" autocomplete="off" value="1" aria-label="Valor em metros" /></label>
         <button class="clear" id="clear" aria-label="Limpar valores">×</button>
-        <label class="readout" data-field="bottom"><span id="bottom-unit">Pés</span><input id="bottom-value" inputmode="decimal" autocomplete="off" value="3,28" aria-label="Valor em pés" /></label>
+        <label class="readout" data-field="bottom"><span id="bottom-unit">Feet</span><input id="bottom-value" inputmode="decimal" autocomplete="off" value="3,28" aria-label="Valor em feet" /></label>
       </div>
       <div class="workspace">
         <nav class="categories" aria-label="Categorias">
@@ -36,7 +36,6 @@
         <aside class="units" aria-label="Unidades"><div id="unit-list"></div></aside>
       </div>
     </section>
-    <footer><span class="dot"></span> Conversão instantânea</footer>
   </main>
   <script src="app.js"></script>
 </body>
