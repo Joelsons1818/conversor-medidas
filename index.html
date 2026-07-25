@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <meta name="theme-color" content="#f7f8f6" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="default" />
+  <meta name="apple-mobile-web-app-title" content="Medidas" />
+  <link rel="manifest" href="manifest.webmanifest" />
+  <link rel="stylesheet" href="style.css" />
+  <title>Medidas</title>
+</head>
+<body>
+  <main class="app" aria-label="Conversor de medidas">
+    <header><span class="eyebrow">CONVERSOR RÁPIDO</span><h1>Medidas</h1><p>Toque numa medida, digite e pronto.</p></header>
+    <section class="converter">
+      <div class="readouts">
+        <label class="readout active" data-field="top"><span id="top-unit">Metros</span><input id="top-value" inputmode="decimal" autocomplete="off" value="1" aria-label="Valor em metros" /></label>
+        <button class="clear" id="clear" aria-label="Limpar valores">×</button>
+        <label class="readout" data-field="bottom"><span id="bottom-unit">Pés</span><input id="bottom-value" inputmode="decimal" autocomplete="off" value="3,28" aria-label="Valor em pés" /></label>
+      </div>
+      <div class="workspace">
+        <nav class="categories" aria-label="Categorias">
+          <button class="category active" data-category="distance">Distância</button>
+          <button class="category" data-category="weight">Peso</button>
+          <button class="category" data-category="volume">Volume</button>
+          <button class="category" data-category="temperature">Temperatura</button>
+        </nav>
+        <section class="keypad" aria-label="Teclado numérico">
+          <button data-key="1">1</button><button data-key="2">2</button><button data-key="3">3</button>
+          <button data-key="4">4</button><button data-key="5">5</button><button data-key="6">6</button>
+          <button data-key="7">7</button><button data-key="8">8</button><button data-key="9">9</button>
+          <button data-key=".">,</button><button data-key="0">0</button><button class="erase" data-key="delete" aria-label="Apagar">⌫</button>
+        </section>
+        <aside class="units" aria-label="Unidades"><div id="unit-list"></div></aside>
+      </div>
+    </section>
+    <footer><span class="dot"></span> Conversão instantânea</footer>
+  </main>
+  <script src="app.js"></script>
+</body>
+</html>
