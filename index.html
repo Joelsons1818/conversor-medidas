@@ -14,7 +14,7 @@
 </head>
 <body>
   <main class="app" aria-label="Conversor de medidas">
-    <header><h1>Medidas</h1></header>
+    <header><h1 id="app-title">Medidas - Distância</h1><button class="history-open" id="history-open" type="button">Histórico</button></header>
     <section class="converter">
       <div class="readouts">
         <label class="readout active" data-field="top"><span id="top-unit">Metros</span><input id="top-value" inputmode="decimal" autocomplete="off" value="1" aria-label="Valor em metros" /></label>
@@ -37,6 +37,10 @@
         <aside class="units" aria-label="Unidades"><div id="unit-list"></div></aside>
       </div>
     </section>
+    <aside class="history-panel" id="history-panel" hidden aria-label="Últimas conversões">
+      <div class="history-head"><strong>Últimas conversões</strong><button id="history-close" type="button" aria-label="Fechar histórico">×</button></div>
+      <div id="history-list" class="history-list"></div>
+    </aside>
   </main>
   <script>
     window.va = window.va || function () { (window.vaq = window.vaq || []).push(arguments); };
